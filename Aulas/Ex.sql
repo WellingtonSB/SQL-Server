@@ -19,8 +19,11 @@ SELECT * FROM person.EmailAddress WHERE BusinessEntityID = 26
 
 SELECT COUNT (DISTINCT title) FROM person.person
 
--- Há quantos produtos cadastrados na tabela (production.product)
-
 -- Qual a quantidade de tamanhos de produtos cadastrados na tabela (production.product)
-
+SELECT COUNT (size) FROM production.product
 -- Qual a quantidade de tamanhos diferentes cadastros na tabela (production.product)
+
+
+SELECT TOP 10 * FROM production.product -- == limita a quantidade de dados 
+
+SELECT TOP 10* FROM person.person ORDER BY firstName desc
