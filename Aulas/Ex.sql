@@ -1,3 +1,4 @@
+# Between
 -- A equipe de marketing precisa fazer uma pesquisa sobre nomes mais comuns de seus clientes e precisa do nome e sobrenome de todos os  clientes que estão cadastrados no sistema;
 SELECT firstName,lastName FROM person.person
 SELECT DISTINCT firstName FROM person.person --Não retorna dados duplicados
