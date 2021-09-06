@@ -1,4 +1,3 @@
-# Between
 -- A equipe de marketing precisa fazer uma pesquisa sobre nomes mais comuns de seus clientes e precisa do nome e sobrenome de todos os  clientes que estão cadastrados no sistema;
 SELECT firstName,lastName FROM person.person
 SELECT DISTINCT firstName FROM person.person --Não retorna dados duplicados
@@ -16,8 +15,6 @@ SELECT * FROM HumanResouces.Employee WHERE MaritalStatus = 'm' AND SalariedFlag 
 SELECT * FROM person.person WHERE lastName = 'peter' and firstName = 'krebs'
 SELECT * FROM person.EmailAddress WHERE BusinessEntityID = 26
 
-
-
 SELECT COUNT (DISTINCT title) FROM person.person
 
 -- Qual a quantidade de tamanhos de produtos cadastrados na tabela (production.product)
@@ -28,3 +25,17 @@ SELECT COUNT (size) FROM production.product
 SELECT TOP 10 * FROM production.product -- == limita a quantidade de dados 
 
 SELECT TOP 10* FROM person.person ORDER BY firstName desc
+
+SELECT * FROM HumanResouces.Employee 
+WHERE HireDate Between '2009/01/01' and '2010/01/01'
+order by HireDate
+
+valor IN (valor1,valor2)
+valor IN (SELECT valor FROM nomeDaTabela) --subquery
+
+SELECT TOP 10 sum(lineTotal) AS "Soma" FROM Sales.SalesOrderDetail
+SELECT TOP 10 AVG (lineTotal)   FROM Sales.SalesOrderDetail
+
+-- Qual a quantidade de produtos que foram vendidos hoje;
+SELECT  Sales.SalesOrderDetail, SUM (UnitPrice) AS "SOMA" FROM Sales.SalesOrderDetail GROUP BY SpecialOfferID 
+SELECT SpecialOfferID,UnitPrice FROM Sales.SalesOrderDetail WHERE SpecialOfferID = 9
